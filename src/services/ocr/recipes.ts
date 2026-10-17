@@ -1,14 +1,17 @@
-import sharp from 'sharp';
+import sharp, { type ResizeOptions, type Sharp } from 'sharp';
 
 /** A preprocessing recipe: which page-segmentation mode to use and how to prepare the image. */
 export interface Recipe {
   name: string;
   psm: 6 | 11;
-  prepare: (buffer: Buffer) => sharp.Sharp;
+  prepare: (buffer: Buffer) => Sharp;
 }
 
-const base = (buf: Buffer, width: number, kernel: keyof sharp.KernelEnum = 'lanczos3') =>
-  sharp(buf).flatten({ background: '#000' }).resize({ width, kernel }).greyscale();
+const base = (
+  buf: Buffer,
+  width: number,
+  kernel: NonNullable<ResizeOptions['kernel']> = 'lanczos3',
+) => sharp(buf).flatten({ background: '#000' }).resize({ width, kernel }).greyscale();
 
 /** Fast, broad recipes; run first and exit early on a match. */
 export const STAGE1: Recipe[] = [

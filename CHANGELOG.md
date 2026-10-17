@@ -22,6 +22,9 @@ Restrukturisasi total. Panduan upgrade: [docs/migration-v2.md](docs/migration-v2
 - Test suite (unit, integrasi, regresi fixture) dengan ambang coverage.
 - ESLint, Prettier, husky, commitlint, CI, Dockerfile multi-stage, Dependabot, CodeQL, dokumentasi lengkap dan ADR.
 
+### Security
+- Upgrade `sharp` ke 0.35.5 (advisory libvips / libheif / librsvg); `npm audit --omit=dev` bersih.
+
 ### Fixed
 - Kebocoran memori kecil pada cooldown (entri tidak pernah dihapus).
 - Error OCR tidak lagi ditelan diam-diam.
