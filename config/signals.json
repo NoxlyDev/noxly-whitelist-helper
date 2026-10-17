@@ -1,0 +1,68 @@
+{
+  "minScore": 5,
+  "signals": [
+    {
+      "name": "core",
+      "weight": 4,
+      "required": true,
+      "tolerance": 0.18,
+      "texts": [
+        "you're not invited to play on this server",
+        "tidak diundang untuk bermain di server ini",
+        "tidak diundang bermain di server ini",
+        "tidak diundang untuk main di server ini"
+      ]
+    },
+    {
+      "name": "title",
+      "weight": 2,
+      "tolerance": 0.2,
+      "texts": [
+        "unable to connect",
+        "tidak dapat terhubung",
+        "tidak dapat tersambung",
+        "tidak bisa terhubung",
+        "tidak dapat menyambung"
+      ]
+    },
+    {
+      "name": "help",
+      "weight": 1,
+      "tolerance": 0.25,
+      "texts": [
+        "search help.minecraft.net for",
+        "cari help.minecraft.net",
+        "help.minecraft.net untuk informasi"
+      ]
+    },
+    {
+      "name": "spyglass",
+      "weight": 1,
+      "tolerance": 0.25,
+      "texts": ["spyglass", "teropong", "teleskop"]
+    },
+    {
+      "name": "btn_menu",
+      "weight": 1,
+      "tolerance": 0.2,
+      "texts": ["back to menu", "kembali ke menu"]
+    },
+    {
+      "name": "btn_det",
+      "weight": 1,
+      "tolerance": 0.2,
+      "texts": ["show details", "tampilkan detail", "tampilkan rincian", "lihat detail"]
+    },
+    {
+      "name": "btn_more",
+      "weight": 1,
+      "tolerance": 0.2,
+      "texts": [
+        "learn more",
+        "pelajari selengkapnya",
+        "pelajari lebih lanjut",
+        "pelajari lebih banyak"
+      ]
+    }
+  ]
+}

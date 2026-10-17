@@ -1,0 +1,26 @@
+services:
+  bot:
+    build: .
+    image: noxly-whitelist-helper:local
+    container_name: noxly-whitelist-helper
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NODE_ENV: production
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+          cpus: '2.0'
+    logging:
+      driver: json-file
+      options:
+        max-size: '10m'
+        max-file: '3'

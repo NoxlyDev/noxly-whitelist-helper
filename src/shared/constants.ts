@@ -1,0 +1,10 @@
+export const BRAND = 'NoxlyDev';
+export const REPLY_FOOTER = 'Jangan lupa makan MBG';
+export const BOT_ACTIVITY = 'Dev by NoxlyDev';
+export const DEFAULT_COOLDOWN_SECONDS = 15;
+export const DEFAULT_MAX_IMAGE_BYTES = 8 * 1024 * 1024;
+export const DEFAULT_FETCH_TIMEOUT_MS = 10_000;
+export const DEFAULT_OCR_RECIPE_TIMEOUT_MS = 30_000;
+export const MAX_IMAGES_PER_MESSAGE = 3;
+export const ALLOWED_IMAGE_HOSTS = ['cdn.discordapp.com', 'media.discordapp.net'] as const;
+export const HEARTBEAT_INTERVAL_MS = 30_000;

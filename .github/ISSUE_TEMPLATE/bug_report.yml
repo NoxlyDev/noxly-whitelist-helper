@@ -1,0 +1,27 @@
+name: Bug report
+description: Laporkan sesuatu yang tidak berjalan semestinya
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Apa yang terjadi?
+      description: Perilaku yang diharapkan vs yang terjadi.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Langkah reproduksi
+      description: Jika terkait deteksi, lampirkan screenshot (hapus info sensitif).
+  - type: input
+    id: version
+    attributes:
+      label: Versi bot / Node.js
+      placeholder: 'v2.0.0 / Node 22.11'
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log
+      description: Jalankan dengan `LOG_LEVEL=debug`. Jangan sertakan token.
+      render: shell
