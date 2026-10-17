@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # ── 1. all dependencies (for building) ────────────────────────────────
-FROM node:22-slim AS deps
+FROM node:25-slim AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm npm ci --ignore-scripts
@@ -14,13 +14,13 @@ RUN npm run build
 
 # ── 3. production dependencies only ───────────────────────────────────
 # node:22-slim is glibc-based, which sharp's prebuilt binaries expect (do not switch to alpine).
-FROM node:22-slim AS prod-deps
+FROM node:25-slim AS prod-deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm npm ci --omit=dev --ignore-scripts
 
 # ── 4. runtime ────────────────────────────────────────────────────────
-FROM node:22-slim AS runtime
+FROM node:25-slim AS runtime
 ENV NODE_ENV=production \
     HEALTH_FILE=/tmp/noxly-healthy
 WORKDIR /app
